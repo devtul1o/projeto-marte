@@ -1,0 +1,109 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 521, in script
+    call screen minigame_invasao
+  File "game/customizacao_telas.rpy", line 972, in execute
+    screen minigame_invasao():
+  File "game/customizacao_telas.rpy", line 972, in execute
+    screen minigame_invasao():
+  File "game/customizacao_telas.rpy", line 977, in execute
+    python:
+  File "game/customizacao_telas.rpy", line 982, in <module>
+    ai_manager = AlienInvasionManager(
+                 ~~~~~~~~~~~~~~~~~~~~^
+        screen_width=config.screen_width,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        screen_height=config.screen_height
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AttributeError: module 'renpy.exports' has no attribute 'Transform'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 521, in script
+    call screen minigame_invasao
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2117, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2655, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2655, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/customizacao_telas.rpy", line 972, in execute
+    screen minigame_invasao():
+  File "game/customizacao_telas.rpy", line 972, in execute
+    screen minigame_invasao():
+  File "game/customizacao_telas.rpy", line 977, in execute
+    python:
+  File "game/customizacao_telas.rpy", line 982, in <module>
+    ai_manager = AlienInvasionManager(
+                 ~~~~~~~~~~~~~~~~~~~~^
+        screen_width=config.screen_width,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        screen_height=config.screen_height
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "logica_invasao.py", line 164, in __init__
+    self.ship = Ship(self.settings)
+                ~~~~^^^^^^^^^^^^^^^
+  File "logica_invasao.py", line 103, in __init__
+    self.displayable = create_displayable("images/ship.png", self.settings.ship_size, "ship")
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "logica_invasao.py", line 90, in create_displayable
+    return renpy.Transform(image_path, zoom=(size[0] / renpy.image.get_width(image_path), size[1] / renpy.image.get_height(image_path)), tag=tag)
+           ^^^^^^^^^^^^^^^                                                                                                                       
+AttributeError: module 'renpy.exports' has no attribute 'Transform'
+
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.5.0.25111603
+Operação Marte 1.0
+Sat Dec  6 13:15:34 2025

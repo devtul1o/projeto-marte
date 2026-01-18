@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 497: end of line expected.
+    jump label pouso_marte
+               ^
+
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Sat Dec  6 13:24:23 2025
