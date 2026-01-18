@@ -53,7 +53,7 @@ Para jogar ou editar o código, você precisará do **Ren'Py Launcher**.
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Tulio**.
+Desenvolvido em **equipe**.
 
 ---
 *Projeto desenvolvido para fins acadêmicos - 2025.*
